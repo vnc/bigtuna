@@ -13,7 +13,10 @@ module ApplicationHelper
   end
 
   def strip_shell_colorization(text)
-    text.gsub(/\e\[[^m]+m/, '')
+    if ! text.nil?
+      text.gsub(/\e\[[^m]+m/, '')
+    end
+    return text
   end
 
   def build_duration(build)
